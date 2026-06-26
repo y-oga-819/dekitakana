@@ -1,0 +1,20 @@
+/* ===== デザイントークン ===== */
+:root{
+  --key-white:#FBF7EF;      /* 白鍵・背景 */
+  --ivory-2:#F1E9D8;        /* 沈んだ面 */
+  --ivory-line:#E4D9C2;
+  --ink:#32263C;            /* 黒鍵・文字 */
+  --ink-soft:#6A5E72;
+  --felt:#C5483D;           /* ピアノ内部フェルトの赤・主アクセント */
+  --felt-deep:#A5392F;
+  --hanamaru:#F5A623;       /* はなまる */
+  --maru:#E0524D;           /* まる */
+  --sankaku:#4C9BD6;        /* さんかく */
+  --meadow:#86C06C;         /* 牧場 */
+  --meadow-deep:#5E9C4C;
+  --sky:#CDE9F2;
+  --gold:#FFCB45;
+  --shadow:rgba(50,38,60,.16);
+  --display:"Baloo 2","M PLUS Rounded 1c",system-ui,sans-serif;
+  --jp:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ ProN W4",system-ui,sans-serif;
+}

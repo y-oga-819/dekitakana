@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ぴあの れんしゅう</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles/tokens.css">
+<link rel="stylesheet" href="src/styles/base.css">
+<link rel="stylesheet" href="src/styles/calendar.css">
+<link rel="stylesheet" href="src/styles/overlay.css">
+<link rel="stylesheet" href="src/styles/report.css">
+<link rel="stylesheet" href="src/styles/gacha.css">
+<link rel="stylesheet" href="src/styles/detail.css">
+<link rel="stylesheet" href="src/styles/responsive.css">
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <div class="brand">
+      <span class="pianokeys"><i></i><i class="b"></i><i></i><i class="b"></i><i></i><i></i><i class="b"></i><i></i></span>
+      ぴあの れんしゅう
+    </div>
+    <div class="spacer"></div>
+    <div class="collect-pill">🐾<span class="lbl"> あつめた </span><b id="collectN">0</b>／31</div>
+  </div>
+
+  <div class="monthnav">
+    <button id="prevM" aria-label="まえの つき">◀</button>
+    <div class="mlabel" id="mlabel">6がつ</div>
+    <button id="nextM" aria-label="つぎの つき">▶</button>
+  </div>
+
+  <!-- カレンダー画面 -->
+  <div class="screen" id="calScreen">
+    <div class="dow">
+      <span class="sun">にち</span><span>げつ</span><span>か</span><span>すい</span><span>もく</span><span>きん</span><span class="sat">ど</span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <button class="fab" id="fab"><span class="ic">🎹</span>れんしゅう できた！</button>
+</div>
+
+<!-- 練習報告：いつ -->
+<div class="overlay" id="repSlot">
+  <div class="sheet">
+    <div class="step-dot"><i class="on"></i><i></i><i></i></div>
+    <h2>いつ れんしゅう した？</h2>
+    <div class="slot-list" id="slotList"></div>
+    <button class="ghostbtn" id="cancelRep0">やめる</button>
+  </div>
+</div>
+
+<!-- 練習報告：量 -->
+<div class="overlay" id="repTime">
+  <div class="sheet">
+    <div class="step-dot"><i></i><i class="on"></i><i></i></div>
+    <h2>なんぷん れんしゅう した？</h2>
+    <div class="keyboard-sel" id="keyboardSel"></div>
+    <div class="sel-readout" id="timeReadout">えらんでね</div>
+    <button class="bigbtn" id="toGrade" disabled>つぎへ ▶</button>
+    <button class="ghostbtn" id="backToSlot">◀ もどる</button>
+  </div>
+</div>
+
+<!-- 練習報告：質 -->
+<div class="overlay" id="repGrade">
+  <div class="sheet">
+    <div class="step-dot"><i></i><i></i><i class="on"></i></div>
+    <h2>きょうは どうだった？</h2>
+    <div class="grades">
+      <button class="grade g-h" data-g="hanamaru"><span class="gmk">💮</span>じょうずに ひけた</button>
+      <button class="grade g-m" data-g="maru"><span class="gmk">⭕️</span>がんばった</button>
+      <button class="grade g-s" data-g="sankaku"><span class="gmk">🔺</span>おしい</button>
+    </div>
+    <button class="bigbtn" id="finishRep" disabled>できた！</button>
+    <button class="ghostbtn" id="backToTime">◀ もどる</button>
+  </div>
+</div>
+
+<!-- ガチャ -->
+<div class="overlay" id="gacha">
+  <div class="sheet">
+    <div class="gacha-title">⭐️ 30ぷん たっせい！ ⭐️</div>
+    <div class="gacha-sub">きょうの どうぶつは なにかな？</div>
+    <div class="capsule-stage" id="stage">
+      <div class="machine" id="machine">
+        <div class="gm-dome"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="gm-body"><div class="gm-knob"></div><div class="gm-slot"></div></div>
+      </div>
+      <div class="tap-hint" id="tapHint">タップ してね！</div>
+    </div>
+    <div class="win-name" id="winName"></div>
+    <button class="bigbtn" id="toMeadowBtn" style="display:none;">📅 カレンダーに もどる</button>
+  </div>
+</div>
+
+<!-- 日詳細 -->
+<div class="overlay" id="detail">
+  <div class="sheet">
+    <h2 id="detTitle">6がつ 5にち</h2>
+    <div class="det-animal" id="detAnimal"></div>
+    <div id="detRows"></div>
+    <div class="det-total">きょうの ごうけい <span><b id="detTotal">0</b>ぷん</span></div>
+    <button class="bigbtn" id="closeDetail" style="margin-top:14px;">とじる</button>
+  </div>
+</div>
+
+<script type="module" src="src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+/* ===== モーション軽減・レスポンシブ ===== */
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;}}
+@media (max-width:560px){
+  .topbar{padding:12px 14px 8px;gap:10px;}
+  .brand{font-size:17px;} .brand .pianokeys{height:22px;}
+  .collect-pill{padding:6px 11px;font-size:14px;}
+  .collect-pill .lbl{display:none;}
+  .monthnav{gap:10px;padding:6px 10px;}
+  .monthnav .mlabel{font-size:24px;min-width:96px;}
+  .monthnav button{width:36px;height:36px;font-size:18px;}
+  .screen{padding:0 10px 88px;}
+  .dow{gap:5px;margin-bottom:6px;} .dow span{font-size:13px;}
+  .grid{gap:5px;}
+  .cell{border-radius:12px;padding:4px;}
+  .cell .dnum{font-size:14px;} .cell .animal{font-size:23px;margin-bottom:1px;}
+  .cell .crown{font-size:15px;top:-11px;right:-8px;} .mk{font-size:9px;}
+  .fab{right:14px;bottom:18px;padding:13px 16px;font-size:17px;border-radius:20px;}
+  .fab .ic{font-size:20px;}
+  .keyboard-sel{gap:4px;padding:6px 6px 8px;}
+  .kkey{width:38px;height:80px;font-size:16px;}
+  .grades{gap:8px;} .grade{font-size:14px;padding:13px 4px 10px;} .grade .gmk{font-size:34px;}
+  .sheet{padding:20px 16px 18px;border-radius:22px;} .sheet h2{font-size:20px;}
+  .machine{width:112px;height:150px;} .gm-dome{width:104px;height:104px;} .gm-body{width:92px;}
+  .reveal-animal{font-size:96px;}
+}
+@media (max-width:360px){
+  .kkey{width:33px;height:72px;font-size:14px;}
+  .cell .animal{font-size:20px;} .cell .dnum{font-size:13px;}
+  .grade{font-size:12px;padding:11px 3px 9px;} .grade .gmk{font-size:30px;}
+}
