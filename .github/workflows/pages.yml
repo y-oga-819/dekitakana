@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+# main への push で静的サイトを GitHub Pages に公開する。
+# 初回のみ、リポジトリの Settings > Pages で Source を
+# "GitHub Actions" に設定してください。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時実行は最新の1つだけに絞る（実行中のデプロイはキャンセルしない）
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        # ビルド不要の静的サイトなのでリポジトリ全体をそのままアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

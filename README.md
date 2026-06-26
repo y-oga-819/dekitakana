@@ -14,6 +14,15 @@ python3 -m http.server 8000
 # ブラウザで http://localhost:8000/piano.html を開く
 ```
 
+### 公開（GitHub Pages）
+
+ビルド不要の静的サイトなので、そのまま GitHub Pages で公開できます。
+パスはすべて相対参照のため、プロジェクトページ（`https://<user>.github.io/dekitakana/`）でも動作します。
+
+- `main` への push で `.github/workflows/pages.yml` が自動デプロイします。
+- **初回のみ** リポジトリの Settings > Pages で Source を **「GitHub Actions」** に設定してください。
+- 公開後の URL: `https://<user>.github.io/dekitakana/`（ルートは `index.html` から `piano.html` に転送）
+
 ### ファイル構成
 
 元々 1 ファイルに HTML / CSS / JS が全部入っていたものを、機能ごとに分割しています。
