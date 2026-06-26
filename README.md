@@ -20,7 +20,7 @@ python3 -m http.server 8000
 パスはすべて相対参照のため、プロジェクトページ（`https://<user>.github.io/dekitakana/`）でも動作します。
 
 - `main` への push で `.github/workflows/pages.yml` が自動デプロイします。
-- **初回のみ** リポジトリの Settings > Pages で Source を **「GitHub Actions」** に設定してください。
+- ワークフローが Pages を自動有効化（`enablement: true`）するため、手動設定は不要です。
 - 公開後の URL: `https://<user>.github.io/dekitakana/`（ルートは `index.html` から `piano.html` に転送）
 
 ### ファイル構成
