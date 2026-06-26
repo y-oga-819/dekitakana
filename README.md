@@ -19,9 +19,11 @@ python3 -m http.server 8000
 ビルド不要の静的サイトなので、そのまま GitHub Pages で公開できます。
 パスはすべて相対参照のため、プロジェクトページ（`https://<user>.github.io/dekitakana/`）でも動作します。
 
-- `main` への push で `.github/workflows/pages.yml` が自動デプロイします。
-- ワークフローが Pages を自動有効化（`enablement: true`）するため、手動設定は不要です。
-- 公開後の URL: `https://<user>.github.io/dekitakana/`（ルートは `index.html` から `piano.html` に転送）
+`main` ブランチから直接配信（Deploy from a branch）しています。
+
+- リポジトリの Settings > Pages で Source を **「Deploy from a branch」**、Branch を **`main` / `(root)`** に設定。
+- 以降は `main` への push で自動的に再公開されます。
+- 公開 URL: `https://<user>.github.io/dekitakana/`（ルートは `index.html` から `piano.html` に転送）
 
 ### ファイル構成
 
