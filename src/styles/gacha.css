@@ -1,0 +1,41 @@
+/* ===== ガチャ ===== */
+#gacha .sheet{background:radial-gradient(circle at 50% 38%,#fff 0%,var(--key-white) 70%);text-align:center;overflow:hidden;}
+.gacha-title{font-family:var(--display);font-size:26px;font-weight:800;color:var(--felt);margin:4px 0 2px;}
+.gacha-sub{font-weight:700;color:var(--ink-soft);margin-bottom:8px;}
+.capsule-stage{height:220px;position:relative;display:flex;align-items:center;justify-content:center;}
+.machine{width:128px;height:172px;cursor:pointer;animation:wiggle 1.6s ease-in-out infinite;
+  display:flex;flex-direction:column;align-items:center;transform-origin:50% 90%;}
+.gm-dome{width:118px;height:118px;border-radius:50%;position:relative;overflow:hidden;
+  background:radial-gradient(circle at 38% 30%,#fff 0 5%,rgba(255,255,255,.5) 8%,rgba(205,233,242,.55) 58%,rgba(134,192,108,.5) 100%);
+  border:5px solid #fff;box-shadow:inset 0 -8px 16px rgba(0,0,0,.12),0 6px 14px var(--shadow);}
+.gm-dome span{position:absolute;width:30px;height:30px;border-radius:50%;box-shadow:inset -3px -4px 0 rgba(0,0,0,.12);}
+.gm-dome span:nth-child(1){background:#F5A623;left:13px;bottom:9px;}
+.gm-dome span:nth-child(2){background:#E0524D;left:44px;bottom:5px;}
+.gm-dome span:nth-child(3){background:#4C9BD6;left:74px;bottom:11px;}
+.gm-dome span:nth-child(4){background:#86C06C;left:30px;bottom:37px;}
+.gm-dome span:nth-child(5){background:#B98BD0;left:62px;bottom:41px;}
+.gm-body{width:104px;height:62px;margin-top:-6px;background:linear-gradient(180deg,var(--felt),var(--felt-deep));
+  border-radius:10px 10px 14px 14px;position:relative;box-shadow:0 5px 0 #8a2f27;}
+.gm-knob{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#fff,#cfcfcf);border:3px solid #fff;}
+.gm-slot{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:46px;height:15px;border-radius:8px;
+  background:#3a1d1a;box-shadow:inset 0 2px 4px rgba(0,0,0,.55);}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg);}50%{transform:rotate(3deg);}}
+.tap-hint{position:absolute;bottom:6px;left:0;right:0;font-weight:800;color:var(--felt);font-size:16px;animation:blink 1s infinite;}
+@keyframes blink{50%{opacity:.3;}}
+.capsule{position:absolute;width:64px;height:64px;border-radius:50%;opacity:0;
+  background:linear-gradient(180deg,#FFD24D 0 50%,#fff 50% 100%);border:3px solid #fff;
+  box-shadow:0 5px 12px rgba(0,0,0,.22),inset -6px -8px 0 rgba(0,0,0,.06);}
+.onoma{position:absolute;top:8px;left:0;right:0;font-family:var(--display);font-weight:800;font-size:30px;color:var(--felt);opacity:0;}
+.reveal-animal{font-size:120px;opacity:0;}
+.spark{position:absolute;font-size:26px;opacity:0;pointer-events:none;}
+.win-name{font-size:22px;font-weight:800;margin:6px 0 2px;opacity:0;}
+.win-name.show{opacity:1;transition:opacity .4s;}
+
+@keyframes rollIn{0%{transform:translateX(-180px) rotate(0);opacity:0;}
+  18%{opacity:1;}100%{transform:translateX(0) rotate(720deg);opacity:1;}}
+@keyframes openPop{0%{transform:scale(1);opacity:1;}60%{transform:scale(1.25);}100%{transform:scale(1.6);opacity:0;}}
+@keyframes burstIn{0%{transform:scale(0);opacity:0;}55%{transform:scale(1.3);opacity:1;}100%{transform:scale(1);opacity:1;}}
+@keyframes onomaPop{0%{transform:scale(.4);opacity:0;}30%{transform:scale(1.1);opacity:1;}80%{opacity:1;}100%{transform:scale(1);opacity:0;}}
+@keyframes sparkFly{0%{transform:translate(0,0) scale(.3);opacity:0;}30%{opacity:1;}
+  100%{transform:translate(var(--dx),var(--dy)) scale(1.1);opacity:0;}}
