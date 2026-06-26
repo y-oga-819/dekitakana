@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
 # main への push で静的サイトを GitHub Pages に公開する。
-# 初回のみ、リポジトリの Settings > Pages で Source を
-# "GitHub Actions" に設定してください。
+# configure-pages の enablement:true により Pages を自動有効化するため、
+# 手動での Settings > Pages の設定は不要。
 
 on:
   push:
@@ -30,6 +30,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          # Pages が未設定でもワークフロー側で有効化する（手動設定が不要になる）
+          enablement: true
       - name: Upload artifact
         # ビルド不要の静的サイトなのでリポジトリ全体をそのままアップロード
         uses: actions/upload-pages-artifact@v3
